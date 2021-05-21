@@ -2,7 +2,7 @@ import express from "express" // importing 3rd part module
 import listEndpoints from "express-list-endpoints"
 import cors from "cors"
 
-import studentsRoutes from "./students/index.js"
+import reviewsRoutes from "./students/index.js"
 
 import { badRequestErrorHandler, notFoundErrorHandler, forbiddenErrorHandler, catchAllErrorHandler } from "./errorHandlers.js"
 
@@ -21,7 +21,7 @@ server.use(cors())
 server.use(express.json()) // If I do not specify this line of code BEFORE the routes, all the request bodies are going to be undefined
 
 // ******** ROUTES ************
-server.use("/students", studentsRoutes) // /students will be the prefix for all the endpoints contained in the students Router
+server.use("/reviews", reviewsRoutes) // /reviews will be the prefix for all the endpoints contained in the reviews Router
 
 
 // ******** ERROR MIDDLEWARES ************
